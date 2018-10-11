@@ -1,0 +1,38 @@
+	* {box-sizing: border-box; font-family: sans-serif, Verdana, Arial, "Lucinda Console";} 
+	.thisApp {max-width: 700px; margin: 0 auto; }
+	@media all and (max-width:413px) {.flexi tr {display: table; width:100%;} .flexi td {display: table-row; }}
+	textarea, select, input, button {display:block; padding: 4px 4px 4px 4px; background-color: #ebebeb; resize: vertical; border: 1px solid gray; 
+		margin: 8px 0; box-sizing: border-box; width: 100%; min-height: 30px; border-radius: 4px;}
+	#selectedFiles1 img {max-width: 200px; max-height: 200px; float: middle; margin-bottom:10px; display: inline-block; }
+	#selectedFiles2 img {max-width: 200px; max-height: 200px; float: middle; margin-bottom:10px; display: inline-block; }
+	.no-break { display: inline; }
+	img { padding-left: 3px; padding-right: 3px; padding-bottom: 3px; padding-top: 3px; } 
+	.thumb {height: 200px; padding-left: 7px; padding-top: 7px; } 
+	.groupPage { page-break-inside: avoid; }
+	.inline-block { display: inline-block; }
+	.inner { display: inline-block; }
+	.required:before {color: red; content: '*'; float: left; }
+	table { border-collapse:collapse; }
+	td { padding: 4px; }
+	td { cursor: pointer;}
+	.tbody1 tr:nth-child(even){ background-color: #D3D3D3; color: black;}
+	@media print { 
+		@page { margin-left: 0.75in !important; margin-right: 0.75in !important; margin-top: .5in; margin-bottom: .75in; background-color: white; }
+		textarea, select, input, button { background-color: white}
+		textarea { overflow: visible; resize: vertical; }
+		.required:before { color: none; content: none; float: none; }
+		.no-print, .no-print * { display: none !important; page-break-inside: avoid; }
+		.groupPage { page-break-inside: avoid; }
+		.printableArea { display: block; }
+		.container { display: block; }
+		::-webkit-input-placeholder { /* WebKit browsers */
+			color: transparent; }
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			color: transparent; }
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			color: transparent; }
+		:-ms-input-placeholder { /* Internet Explorer 10+ */
+			color: transparent; }
+	}
+	select { -webkit-appearance: menulist-button; color: black; }
+	select:invalid { color: gray; }

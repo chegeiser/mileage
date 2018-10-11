@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# Version 2018.09.28.01
+
+CACHE:
+index.html
+img/icon-60@2x.png
+img/Default-568h@2x~iphone.png
+favicon.ico
+css/custom.css
+cordova.js
+js/jquery.min.js
+js/pouchdb-nightly.min.js
+js/app.js
+js/imgUpload.js

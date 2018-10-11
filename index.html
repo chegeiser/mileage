@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- <html manifest="cache.manifest">-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="" >
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="MobileOptimized" content="320" >
+    <meta name="msapplication-tap-highlight" content="no" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" >
+    <meta http-equiv="cleartype" content="on" >
+    <meta name="mobile-web-app-capable" content="yes" >
+    <meta name="apple-mobile-web-app-title" content="MPG Tracker">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" >
+    <meta name="apple-mobile-web-app-capable" content="yes" >
+    <meta name="format-detection" content="telephone=no" >
+
+    <title>MPG Tracker</title>
+
+    <link rel="apple-touch-icon" href="img/icon-60@2x.png" />
+    <link rel="apple-touch-startup-image" href="img/Default-568h@2x~iphone.png" />
+    <link rel="shortcut icon" href="favicon.ico">
+	
+    <link rel="stylesheet" type="text/css" href="css/custom.css" >
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/pouchdb-nightly.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/imgUpload.js"></script>
+
+</head>
+<!-- <body onload="onLoad()"> -->
+<!-- <body ontouchmove="BlockMove(event);" > -->
+<body ontouchstart="">
+
+  <header id="header" class="banner" style="display: block" >
+    <h1 align="center" >
+      <br/>MPG Tracker<br/><br/>
+    </h1>
+  </header>
+    <div id="addEntry" class="thisApp container content-container" style="display: block; margin-bottom:15px" >
+        <!-- <div class="container-fluid"> -->
+      <!-- <div class="row no-print">
+          <div class="col-xs-12 col-sm-4 ">
+              <label for="user">User:&nbsp&nbsp</label>
+              <input type="text" name="user" /><br><br>
+          </div>
+          <div class="col-xs-12 col-sm-4 ">
+              <label for="password">Password:&nbsp&nbsp</label>
+              <input type="password" name="password" /><br><br>
+          </div>
+      </div> -->
+<!--	  <div id="dbsource" class="row no-print" style="display: block" >
+          <div class="col-xs-12 col-sm-4 ">
+              <label for="mydb">Database URL:&nbsp&nbsp</label>
+              <input type="text" name="mydb" id="mydb" />
+          </div>
+          <button type="button" onClick="selectDB()" class="btn no-print inner" style="width: 150px" >Save Database URL</button>
+      </div><br><br>-->
+    <form name="reportform" method="post" class="no-print" >
+	<input type="hidden" id="ID" name="ID" />
+	<input type="hidden" id="REV" name="REV" />
+	<input type="hidden" id="dateField" name="dateField" />
+	<input type="hidden" id="timeField" name="timeField" />
+      <table width="100%" class="flexi">
+        <tr>
+		  <td width="33%">
+		  </td>
+		  <td width="33%">
+			  <label for="carField">Car:</label>
+			  <select id="carField" name="carField" class="button form-control" >
+				<option value="" selectedstyle="font-style:italic" selected disabled hidden>Choose car</option>
+				<option id="Car1" value="Impreza">Impreza</option>
+				<option id="Car2" value="Outback">Outback</option>
+			  </select>
+		  </td>
+		  <td width="33%">
+		  </td>
+		</tr>
+	  </table>
+      <table width="100%" class="flexi">
+		<tr>
+		  <td width="33%">
+          <label for="milesField">Odometer:&nbsp&nbsp</label>
+          <!-- <input type="number" pattern="[0-9]*" name="milesField" /><br><br> -->
+          <input type="number" pattern="[0-9]" id="milesField" name="milesField" />
+          <td>
+		  <td width="33%">
+          <label for="avgmpgField">Avg MPG:&nbsp&nbsp</label>
+          <!-- <input type="number" pattern="[0-9]*" name="avgmpgField" /><br><br> -->
+          <input type="number" id="avgmpgField" name="avgmpgField" />
+          <td>
+		  <td width="33%">
+          <label for="gallonsField">Gallons:&nbsp&nbsp</label>
+          <!-- <input type="number" pattern="[0-9]*" name="gallonsField" /> -->
+          <input type="number" id="gallonsField" name="gallonsField" />
+          </td>
+		</tr>
+		</table>
+		<table width="100%" class="flexi">
+		<tr>
+		  <td width="100%">
+          <label>Notes:</label>
+          <textarea oninput="auto_grow(this)" id="notesField" name="notesField" placeholder="Enter notes here" ></textarea><br><br>
+          </td>
+		</tr>
+		</table>
+        <table width="33%" class="flexi">
+            <tr>
+			  <td>
+                <input type="file" id="files1" name="files1" class="no-print" ><br/>
+              </td>
+			</tr>
+		</table>
+		<table width="100%" >
+            <tr>
+				<td align="center">
+					<article align="center">
+				      <div id="selectedFiles1"></div>
+                    </article>
+                </td>
+            </tr>
+		</table>
+      <div class="container-fluid" align="center">
+        <input type="button" value="Submit" onClick="addReport()" class="btn no-print" style="width: 100px" >
+		<input type="button" value="Show All" onClick="showReports()" class="btn no-print" style="width: 100px" >
+		<div id="delDiv" style="display: none"></div>
+      </div><br>
+    </form>
+    </div>
+
+	<div id="myDIV" align="center" style="display: none">
+        <input type="button" class="btn no-print " style="width: 150px" value="Print Report" onClick="myPrint()" /> 
+		<input type="button" class="btn no-print " style="width: 150px" value="Add Another Entry" onClick="addAnother()" /> 
+		<div id="mpgTable" style="margin:0 auto;" ></div>
+	</div>
+
+  <script type="text/javascript" src="cordova.js"></script> 
+  <script src="js/pouchdb-nightly.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
