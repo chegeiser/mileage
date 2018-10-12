@@ -136,7 +136,7 @@ var form, addReport;
 form = window.document.reportform;
 
 var local = new PouchDB('mileage');
-var remote = new PouchDB('https://couch.cebaxo.com:6984/mileage');
+var remote = new PouchDB('https://db.cebaxo.com:6984/mileage');
 var opts = {
   live: true,
   // filter: function(doc) {
