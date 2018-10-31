@@ -281,7 +281,7 @@ function showTableOfReports(data) {
     var div = document.getElementById("mpgTable");
 	// var calcavg = data[i].doc.miles / data[i].doc.gallons;
     var str = "<header class="+"'banner'"+" >"+"<h2 align="+"'center'"+">MPG Data</h1>"+"</header>"+"<table id="+
-		"\'mpgTableData'"+"style="+"'margin: 0px auto;'"+"class="+"\'tbody1'"+"><tr><th>ID</th><th>Date&nbsp&nbsp</th>"+
+		"\'mpgTableData'"+"style="+"'margin: 0px auto;'"+"class="+"\'tbody1'"+"><tr><th>Date&nbsp&nbsp</th>"+
         "<th>Car&nbsp&nbsp</th><th>Miles&nbsp&nbsp</th><th>Gallons&nbsp&nbsp</th><th>Avg MPG</th></tr>";
     for (var i = 0; i < data.length; i++) {
         str += "<tr><td style=" +"\'display:none;'>" + data[i].doc._id + //"&nbsp&nbsp&nbsp" +
