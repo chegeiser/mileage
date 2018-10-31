@@ -20,27 +20,27 @@ function auto_grow(element) {
 }
 
 function addAnother(){
-    document.getElementById("addEntry").style.display="block";
-/*	var x = document.getElementById("addEntry");
+/*    document.getElementById("addEntry").style.display="block";*/
+	var x = document.getElementById("addEntry");
     if (x.style.display === "block") {
         clearFields();
     } else if (x.style.display = "none") {
 		clearFields();
-		x.style.display = "block";} */
-   document.getElementById("myDIV").style.display="none";
-/*	var x = document.getElementById("myDIV");
+		x.style.display = "block";} 
+/*   document.getElementById("myDIV").style.display="none";*/
+	var x = document.getElementById("myDIV");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
         x.style.display = "none";
-    } */
-    document.getElementById("delDiv").style.display="none";
-/*	var x = document.getElementById("delDiv");
+    } 
+/*    document.getElementById("delDiv").style.display="none";*/
+	var x = document.getElementById("delDiv");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
         x.style.display = "none";
-    } */
+    } 
 	
     document.getElementById("printTable").style.display="none";
     $('html,body').animate({scrollTop:0},0);
@@ -51,21 +51,21 @@ $(document).on('click', '#mpgTableData tr',
 		var thisID = ($(this).find('td:first').html());
 		getReport(thisID);
 		addDeleteBtn();
-		document.getElementById("addEntry").style.display="block";
-		/*var x = document.getElementById("addEntry");
+/*		document.getElementById("addEntry").style.display="block";*/
+		var x = document.getElementById("addEntry");
 		if (x.style.display === "none") {
 			x.style.display = "block";
 		} else {
 			x.style.display = "block";
-		}*/
+		}
 
-		document.getElementById("delDiv").style.display="block";	
-/*		var x = document.getElementById("delDiv");
+/*		document.getElementById("delDiv").style.display="block";*/	
+		var x = document.getElementById("delDiv");
 		if (x.style.display === "none") {
 			x.style.display = "block";
 		} else {
 			x.style.display = "block";
-		};*/
+		};
 		
 	        document.getElementById("printTable").style.display="none";
 	        $('html,body').animate({scrollTop:0},0);
@@ -119,8 +119,21 @@ function getReport(thisID){
 		window.document.getElementById("dateField").value=date;
 		window.document.getElementById("timeField").value=time;
 	});
-	document.getElementById("mpgTable").style.display="none";
-        document.getElementById("addEntry").style.display="block";
+/*	document.getElementById("mpgTable").style.display="none";*/
+	var x = document.getElementById("mpgTable");
+		if (x.style.display === "block") {
+			x.style.display = "none";
+		} else {
+			x.style.display = "none";
+		}
+/*        document.getElementById("addEntry").style.display="block";*/
+	var x = document.getElementById("addEntry");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "block";
+		};
+	
 	$('html,body').animate({scrollTop:0},0);	
 	// console.log(window.document.getElementById("ID"));
 }
@@ -269,34 +282,34 @@ function showReports() {
 			element.scrollIntoView();
         });
 	});
-    document.getElementById("myDIV").style.display="block";
-/*	var x = document.getElementById("myDIV");
+/*    document.getElementById("myDIV").style.display="block";*/
+	var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
         x.style.display = "block";
-    } */
-    document.getElementById("addEntry").style.display="none";
-/*	var x = document.getElementById("addEntry");
+    } 
+/*    document.getElementById("addEntry").style.display="none";*/
+	var x = document.getElementById("addEntry");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
-        x.style.display = "block";
-    } */
-    document.getElementById("header").style.display="none";
-/*	var x = document.getElementById("header");
+        x.style.display = "none";
+    } 
+/*    document.getElementById("header").style.display="none";*/
+	var x = document.getElementById("header");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
-        x.style.display = "block";
-    }*/
+        x.style.display = "none";
+    }
 }
 
 function showTableOfReports(data) {
     var div = document.getElementById("mpgTable");
 	// var calcavg = data[i].doc.miles / data[i].doc.gallons;
-/*    var str = "<header class="+"'banner'"+" >"+"<h2 align="+"'center'"+">MPG Data</h1>"+"</header>"+"<table id="+*/
-    var str = "<table id="+"\'mpgTableData'"+"style="+"'margin: 0px auto;'"+"class="+"\'tbody1'"+"><tr><th>Date&nbsp&nbsp</th>"+
+    var str = "<header class="+"'banner'"+" >"+"<h2 align="+"'center'"+">MPG Data</h1>"+"</header>"+"<table id="+
+/*    var str = "<table id="+"\'mpgTableData'"+"style="+"'margin: 0px auto;'"+"class="+"\'tbody1'"+"><tr><th>Date&nbsp&nbsp</th>"+*/
 	"<th>Car&nbsp&nbsp</th><th>Miles&nbsp&nbsp</th><th>Gallons&nbsp&nbsp</th><th>Avg MPG</th></tr>";
     for (var i = 0; i < data.length; i++) {
         str += "<tr><td style=" +"\'display:none;'>" + data[i].doc._id + //"&nbsp&nbsp&nbsp" +
