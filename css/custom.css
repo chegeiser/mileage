@@ -25,13 +25,13 @@
 		.groupPage { page-break-inside: avoid; }
 		.printableArea { display: block; }
 		.container { display: block; }
-		::-webkit-input-placeholder { /* WebKit browsers */
+		::-webkit-input-placeholder { 
 			color: transparent; }
-		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		:-moz-placeholder { 
 			color: transparent; }
-		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		::-moz-placeholder { 
 			color: transparent; }
-		:-ms-input-placeholder { /* Internet Explorer 10+ */
+		:-ms-input-placeholder { 
 			color: transparent; }
 	}*/
 	select { -webkit-appearance: menulist-button; color: black; }
