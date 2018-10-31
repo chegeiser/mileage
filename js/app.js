@@ -269,12 +269,12 @@ function showReports() {
     } else {
         x.style.display = "block";
     }
-	var x = document.getElementById("header");
+/*	var x = document.getElementById("header");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
         x.style.display = "block";
-    }
+    }*/
 }
 
 function showTableOfReports(data) {
