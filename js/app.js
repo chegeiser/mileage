@@ -37,7 +37,7 @@ function addAnother(){
         x.style.display = "none";
     } else {
         x.style.display = "none";
-    }
+    } 
 }
 
 $(document).on('click', '#mpgTableData tr', 
