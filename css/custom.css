@@ -16,7 +16,7 @@
 	td { padding: 4px; }
 	td { cursor: pointer;}
 	.tbody1 tr:nth-child(even){ background-color: #D3D3D3; color: black;}
-	@media print { 
+/*	@media print { 
 		@page { margin-left: 0.75in !important; margin-right: 0.75in !important; margin-top: .5in; margin-bottom: .75in; background-color: white; }
 		textarea, select, input, button { background-color: white}
 		textarea { overflow: visible; resize: vertical; }
@@ -33,6 +33,6 @@
 			color: transparent; }
 		:-ms-input-placeholder { /* Internet Explorer 10+ */
 			color: transparent; }
-	}
+	}*/
 	select { -webkit-appearance: menulist-button; color: black; }
 	select:invalid { color: gray; }
