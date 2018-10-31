@@ -3,8 +3,9 @@ document.addEventListener('deviceready', function () {
 }, false);
 
 function myPrint(){
-/*	var page = document.getElementById('mpgTable');*/
-	var page = location.href;
+//	var page = document.getElementById('mpgTable');
+	var page = document.getElementById('printTable');
+/*	var page = location.href;*/
 	cordova.plugins.printer.print(page, 'Document.html');
 }
 
