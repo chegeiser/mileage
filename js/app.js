@@ -20,26 +20,30 @@ function auto_grow(element) {
 }
 
 function addAnother(){
-	var x = document.getElementById("addEntry");
+    document.getElementById("addEntry").style.display="block";
+/*	var x = document.getElementById("addEntry");
     if (x.style.display === "block") {
         clearFields();
     } else if (x.style.display = "none") {
 		clearFields();
-		x.style.display = "block";}
-	
-	var x = document.getElementById("myDIV");
+		x.style.display = "block";} */
+   document.getElementById("myDIV").style.display="none";
+/*	var x = document.getElementById("myDIV");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
         x.style.display = "none";
-    }
-	
-	var x = document.getElementById("delDiv");
+    } */
+    document.getElementById("delDiv").style.display="none";
+/*	var x = document.getElementById("delDiv");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
         x.style.display = "none";
-    } 
+    } */
+	
+    document.getElementById("printTable").style.display="none";
+    $('html,body').animate({scrollTop:0},0);
 }
 
 $(document).on('click', '#mpgTableData tr', 
@@ -47,19 +51,24 @@ $(document).on('click', '#mpgTableData tr',
 		var thisID = ($(this).find('td:first').html());
 		getReport(thisID);
 		addDeleteBtn();
-		var x = document.getElementById("addEntry");
+		document.getElementById("addEntry").style.display="block";
+		/*var x = document.getElementById("addEntry");
 		if (x.style.display === "none") {
 			x.style.display = "block";
 		} else {
 			x.style.display = "block";
-		}
-	
-		var x = document.getElementById("delDiv");
+		}*/
+
+		document.getElementById("delDiv").style.display="block";	
+/*		var x = document.getElementById("delDiv");
 		if (x.style.display === "none") {
 			x.style.display = "block";
 		} else {
 			x.style.display = "block";
-		}
+		};*/
+		
+	        document.getElementById("printTable").style.display="none";
+	        $('html,body').animate({scrollTop:0},0);
 	});
 
 function addDeleteBtn(){
@@ -110,8 +119,9 @@ function getReport(thisID){
 		window.document.getElementById("dateField").value=date;
 		window.document.getElementById("timeField").value=time;
 	});
-	$('html,body').animate({scrollTop:0},0);
-	document.getElementById("mpgTable").style.display="none";	
+	document.getElementById("mpgTable").style.display="none";
+        document.getElementById("addEntry").style.display="block";
+	$('html,body').animate({scrollTop:0},0);	
 	// console.log(window.document.getElementById("ID"));
 }
 ////////// END - THIS WORKS!!!!!!!!!! /////////////////////////////////////////////////////////////////////////	
@@ -259,18 +269,21 @@ function showReports() {
 			element.scrollIntoView();
         });
 	});
-	var x = document.getElementById("myDIV");
+    document.getElementById("myDIV").style.display="block";
+/*	var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
         x.style.display = "block";
-    }
-	var x = document.getElementById("addEntry");
+    } */
+    document.getElementById("addEntry").style.display="none";
+/*	var x = document.getElementById("addEntry");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
         x.style.display = "block";
-    }
+    } */
+    document.getElementById("header").style.display="none";
 /*	var x = document.getElementById("header");
     if (x.style.display === "block") {
         x.style.display = "none";
