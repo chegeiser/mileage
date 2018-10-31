@@ -23,7 +23,27 @@
     <link rel="shortcut icon" href="favicon.ico">
 	
     <link rel="stylesheet" type="text/css" href="css/custom.css" >
-
+<style>
+	@media print { 
+		@page { margin-left: 0.75in !important; margin-right: 0.75in !important; margin-top: .5in; margin-bottom: .75in; background-color: white; }
+		textarea, select, input, button { background-color: white}
+		textarea { overflow: visible; resize: vertical; }
+		.required:before { color: none; content: none; float: none; }
+		.no-print, .no-print * { display: none !important; page-break-inside: avoid; }
+		.groupPage { page-break-inside: avoid; }
+		.printableArea { display: block; }
+		.container { display: block; }
+		::-webkit-input-placeholder { /* WebKit browsers */
+			color: transparent; }
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			color: transparent; }
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			color: transparent; }
+		:-ms-input-placeholder { /* Internet Explorer 10+ */
+			color: transparent; }
+	}
+</style>
+	
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/pouchdb-nightly.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
@@ -34,7 +54,8 @@
 <!-- <body ontouchmove="BlockMove(event);" > -->
 <body ontouchstart="">
 
-  <header id="header" class="banner" style="display: block" >
+<!--  <header id="header" class="banner" style="display: block" > -->
+  <header id="header" class="banner" >
     <h1 align="center" >
       <br/>MPG Tracker<br/><br/>
     </h1>
