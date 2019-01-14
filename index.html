@@ -43,7 +43,88 @@
 			color: transparent; }
 	}
 </style>
-	
+	<script>
+		(function() {
+		  // Use an input to show the current value and let
+		  // the user set a new one
+		  var input = document.getElementById("dbsource");
+
+		  // Reading the value, which was store as "dbsource"
+		  if (localStorage && 'dbsource' in localStorage) {
+			input.value = localStorage.dbsource;
+		  }
+
+		  document.getElementById("setValue").onclick = function () {
+			// Writing the value
+			localStorage && (localStorage.dbsource = input.value);
+		  };
+		  var x = document.getElementById("dbsource");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			};
+		  var x = document.getElementById("reportform");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			};
+		})();
+		
+	</script>
+	<script>
+		function showDB() {
+		  var x = document.getElementById("dbsource");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			};
+		  var x = document.getElementById("reportform");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			};
+		}
+	</script>
+<!--	<script type="text/javascript" >
+		function setCookie(dbname,dbvalue,exdays) {
+		  var d = new Date();
+		  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		  var expires = "expires=" + d.toGMTString();
+		  document.cookie = dbname + "=" + dbvalue + ";" + expires + ";path=/";
+		}
+
+		function getCookie(dbname) {
+		  var name = dbname + "=";
+		  var decodedCookie = decodeURIComponent(document.cookie);
+		  var ca = decodedCookie.split(';');
+		  for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+			  c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+			  return c.substring(name.length, c.length);
+			}
+		  }
+		  return "";
+		}
+
+		function checkCookie() {
+		  var db=getCookie("dbname");
+		  if (db != "") {
+			alert("Welcome again to " + db);
+		  } else {
+			 db = prompt("Please enter your database address:","");
+			 if (db != "" && db != null) {
+			   setCookie("dbname", db, 30);
+			 }
+		  }
+		}
+	</script> -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/pouchdb-nightly.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
@@ -52,7 +133,8 @@
 </head>
 <!-- <body onload="onLoad()"> -->
 <!-- <body ontouchmove="BlockMove(event);" > -->
-<body ontouchstart="">
+<!-- <body ontouchstart=""> -->
+<body onload="checkCookie()" >
 
   <header id="header" class="banner" style="display: block" >
 <!--  <header id="header" class="banner" > -->
@@ -62,7 +144,7 @@
   </header>
     <div id="addEntry" class="thisApp container content-container" style="display: block; margin-bottom:15px" >
       <div class="container-fluid"> 
-      <div class="row no-print">
+<!--      <div class="row no-print">
           <div class="col-xs-12 col-sm-4 ">
               <label for="user">User:&nbsp&nbsp</label>
               <input type="text" name="user" /><br><br>
@@ -71,15 +153,19 @@
               <label for="password">Password:&nbsp&nbsp</label>
               <input type="password" name="password" /><br><br>
           </div>
-      </div>
+      </div>-->
 	  <div id="dbsource" class="row no-print" style="display: block" >
           <div class="col-xs-12 col-sm-4 ">
               <label for="mydb">Database URL:&nbsp&nbsp</label>
               <input type="text" name="mydb" id="mydb" />
           </div>
-          <button type="button" onClick="selectDB()" class="btn no-print inner" style="width: 150px" >Save Database URL</button>
+		  <input type="button" id="setValue" value="Set">
+          <!-- <button type="button" onClick="selectDB()" class="btn no-print inner" style="width: 150px" >Save Database URL</button> -->
       </div><br><br>
-    <form name="reportform" method="post" class="no-print" >
+	  </div>
+	  </div>
+    <form name="reportform" method="post" class="no-print"  style="display: none" >
+	<input type="button" id="showDB" value="Show Database Address" class="no-print" />
 	<input type="hidden" id="ID" name="ID" />
 	<input type="hidden" id="REV" name="REV" />
 	<input type="hidden" id="dateField" name="dateField" />
@@ -160,6 +246,7 @@
 	</div>
 
 <!--  <script type="text/javascript" src="cordova.js"></script> -->
+
   <script src="js/pouchdb-nightly.min.js"></script>
   <script src="js/app.js"></script>
 
