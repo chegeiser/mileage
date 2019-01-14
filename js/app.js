@@ -157,11 +157,12 @@ function getReport(thisID){
 //   }
 // };
 
-var form, addReport;
+
+var form, addReport,dbAddress;
 form = window.document.reportform;
 
 var local = new PouchDB('mileage');
-var remote = new PouchDB('http://cebaxo.com:5984/mileage');
+var remote = new PouchDB('mydb');
 var opts = {
   live: true,
   // filter: function(doc) {
