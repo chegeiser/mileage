@@ -50,13 +50,14 @@
 		  var input = document.getElementById("dbsource");
 
 		  // Reading the value, which was store as "dbsource"
-		  if (localStorage && 'dbsource' in localStorage) {
-			input.value = localStorage.dbsource;
-		  }
+		  //if (localStorage && 'dbsource' in localStorage) {
+			//input.value = localStorage.dbsource;
+		  //}
+			localStorage.setItem("dbsource", input.value);
 
 		 
 			// Writing the value
-		  localStorage && (localStorage.dbsource = input.value);
+		  //localStorage && (localStorage.dbsource = input.value);
 		  
 		  var x = document.getElementById("dbsource");
 			if (x.style.display === "block") {
