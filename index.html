@@ -65,7 +65,7 @@
 			// Writing the value
 		  //localStorage && (localStorage.dbsource = input.value);
 		  
-<!--		  var x = document.getElementById("dbsource");
+/*		  var x = document.getElementById("dbsource");
 			if (x.style.display === "block") {
 				x.style.display = "none";
 			} else {
@@ -77,7 +77,7 @@
 			} else {
 				x.style.display = "none";
 			};
-		  alert("Database: " + localStorage.getItem("mydb"));-->
+		  alert("Database: " + localStorage.getItem("mydb"));*/
 		};
 	</script>
 <!--	<script>
@@ -162,17 +162,16 @@
               <input type="password" name="password" /><br><br>
           </div>
       </div>-->
-	  <div id="dbsource" class="row no-print" style="display: block" >
+<!--	  <div id="dbsource" class="row no-print" style="display: block" >
           <div class="col-xs-12 col-sm-4 ">
               <label for="mydb">Database URL:&nbsp&nbsp</label>
               <input type="text" name="mydb" id="mydb" />
           </div>
 		  <input type="button" id="setValue" onClick="setValue()" value="Set" style="width: 100px">
-          <!-- <button type="button" onClick="selectDB()" class="btn no-print inner" style="width: 150px" >Save Database URL</button> -->
       </div><br><br>
 	  </div>
-	  </div>
-    <form name="reportform" id="reportform" method="post" class="no-print"  style="display: none" >
+	  </div>-->
+    <form name="reportform" id="reportform" method="post" class="no-print"  style="display: block" >
 	<input type="button" id="showDB" onClick="showDB()" value="Show Database Address" class="no-print" style="width: 150px"/>
 	<input type="hidden" id="ID" name="ID" />
 	<input type="hidden" id="REV" name="REV" />
