@@ -47,13 +47,13 @@
 		function setValue() {
 		  // Use an input to show the current value and let
 		  // the user set a new one
-		  var input = document.getElementById("dbsource");
+		  var input = document.getElementById("mydb");
 
 		  // Reading the value, which was store as "dbsource"
 		  //if (localStorage && 'dbsource' in localStorage) {
 			//input.value = localStorage.dbsource;
 		  //}
-			localStorage.setItem("dbsource", input.value);
+			localStorage.setItem("mydb", input.value);
 
 		 
 			// Writing the value
@@ -71,7 +71,7 @@
 			} else {
 				x.style.display = "none";
 			};
-		  alert("Database: " + localStorage.getItem("dbsource"));
+		  alert("Database: " + localStorage.getItem("mydb"));
 		};
 	</script>
 	<script>
