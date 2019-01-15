@@ -47,19 +47,25 @@
 		function setValue() {
 		  // Use an input to show the current value and let
 		  // the user set a new one
-		  var input = window.document.getElementById("mydb");
-
+		  //var input = window.document.getElementById("mydb");
+		  if (mydb != "") {
+			alert("Welcome again to " + mydb);
+		  } else {
+			 mydb = prompt("Please enter your database address:","");
+			 if (mydb != "" && mydb != null) {
+			  
+			
 		  // Reading the value, which was store as "dbsource"
 		  //if (localStorage && 'dbsource' in localStorage) {
 			//input.value = localStorage.dbsource;
 		  //}
 			localStorage.setItem("mydb", input.value);
-
+			 }
 		 
 			// Writing the value
 		  //localStorage && (localStorage.dbsource = input.value);
 		  
-		  var x = document.getElementById("dbsource");
+<!--		  var x = document.getElementById("dbsource");
 			if (x.style.display === "block") {
 				x.style.display = "none";
 			} else {
@@ -71,10 +77,10 @@
 			} else {
 				x.style.display = "none";
 			};
-		  alert("Database: " + localStorage.getItem("mydb"));
+		  alert("Database: " + localStorage.getItem("mydb"));-->
 		};
 	</script>
-	<script>
+<!--	<script>
 		function showDB() {
 		  var x = document.getElementById("dbsource");
 			if (x.style.display === "none") {
@@ -89,7 +95,7 @@
 				x.style.display = "none";
 			};
 		}
-	</script>
+	</script>-->
 <!--	<script type="text/javascript" >
 		function setCookie(dbname,dbvalue,exdays) {
 		  var d = new Date();
@@ -136,7 +142,7 @@
 <!-- <body ontouchmove="BlockMove(event);" > -->
 <!-- <body ontouchstart=""> -->
 <!-- <body onload="checkCookie()" > -->
-<body>
+<body onload="onLoad()">
 	
   <header id="header" class="banner" style="display: block" >
 <!--  <header id="header" class="banner" > -->
