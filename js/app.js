@@ -162,7 +162,7 @@ var form, addReport,dbAddress;
 form = window.document.reportform;
 
 var local = new PouchDB('mileage');
-var remote = new PouchDB('mydb');
+var remote = new PouchDB(localStorage.getItem("dbsource"));
 var opts = {
   live: true,
   // filter: function(doc) {
