@@ -163,7 +163,8 @@ form = window.document.reportform;
 
 var local = new PouchDB('mileage');
 // var remote = new PouchDB(localStorage.getItem("dbsource"));
-var remote = new PouchDB('https://99.105.39.24:3030/mileage');
+// var remote = 'https://99.105.39.24:3030/mileage';
+var remote = PouchDB.sync('local', 'http://99.105.39.24:5984/mileage');
 var opts = {
   live: true,
   // filter: function(doc) {
